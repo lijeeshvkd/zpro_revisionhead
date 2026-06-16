@@ -62,7 +62,7 @@ sap.ui.define([
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
 									"additionalInformation": "SAPUI5.Component=zpj.pro.sd.sk.zprorevisionhead",
-									"url": sap.ui.require.toUrl("zpj/pro/sd/sk/zprorevisionhead")
+									"url": sap.ui.require.toUrl("zpj/pro/sd/sk/zprovertihead")
 								}
 							}
 						}
