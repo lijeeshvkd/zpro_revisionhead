@@ -1,0 +1,207 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:forms="sap.ui.layout.form"
+>
+    <ScrollContainer
+        width="100%"
+        vertical="true"
+        focusable="true"
+    >
+        <Table
+            id="idTblProductDetails"
+            items="{ProductModel>/}"
+        >
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="Products Details" />
+                    <!-- Start: Attach001 -->
+                    <Link
+                        id="idShowAttachments"
+                        visible="false"
+                        text="Show Attachments"
+                        press="onShowAttachmentsLinkPress"
+                    />
+                    <!-- End: Attach001 -->
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center"
+                    width="8rem"
+                >
+                    <Label
+                        wrapping="true"
+                        text="Material Freight Groups"
+                    />
+                </Column>
+
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="Product" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="End"
+                >
+                    <Text text="Size" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="Designs" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="Vendor" />
+                </Column>
+
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center"
+                    visible="false"
+                >
+                    <Text text="Volume" />
+                </Column>
+                <Column hAlign="Center">
+                    <Text text="Freight" />
+                </Column>
+                <Column hAlign="Center">
+                    <Text text="Revised freight" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="End"
+                >
+                    <Text text="Discount" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                    width="7rem"
+                >
+                    <Text text="Net Ex Factory(Sqft)" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                    width="7rem"
+                >
+                    <Text text="SVC/BP(Sqft)" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="BP Remarks" />
+                </Column>
+
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                    visible="false"
+                >
+                    <Text text="Gross Margin" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                    visible="false"
+                >
+                    <Text text="Volume(Sqft In Lakhs)" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="Revised BP(Sqft)" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="Gross Margin(%)" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="Remarks" />
+                </Column>
+                <!-- Start: Remarkcol001 -->
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                >
+                    <Text text="PMG Remarks" />
+                </Column>
+                <!-- End: Remarkcol001 -->
+            </columns>
+
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    <cells>
+                        <Text text="{ProductModel>Mfrgr}" />
+                        <Text text="{ProductModel>Prdgrp}" />
+                        <Text text="{ProductModel>Szcm}" />
+                        <Text text="{ProductModel>Design}" />
+
+                        <Text text="{ProductModel>Sname}" />
+                        <Text
+                            visible="false"
+                            text="{ProductModel>Volume}"
+                        />
+                        <Text text="{ProductModel>Frghtsqft}" />
+                        <Text text="{ProductModel>ApprovedFrightprice}" />
+
+                        <!-- <Text text="{ProductModel>Discount}" />  -->
+                        <Text
+                            text="{parts:['ProductModel>Discount', 'ProductModel>Discountb'], formatter:'.formatter.getDiscount' }"
+                        />
+                        <Text text="{ProductModel>Netexsqft}" />
+                        <Text text="{ProductModel>Buyingpricesqft}" />
+                        <Text text="{ProductModel>Remark}" />
+                        <Text
+                            visible="false"
+                            text="{ProductModel>Grossmarg}"
+                        />
+                        <Text
+                            visible="false"
+                            text="{ProductModel>Zvolumepft}"
+                        />
+                        <Text
+                            text="{path:'ProductModel>ApprovedBuyingprice'}"
+                        />
+                        <Text text="{path:'ProductModel>Grossmargper'}" />
+                        <Text text="{path:'ProductModel>Sbremark'}" />
+                        <!-- Start: Remarkcol001 -->
+                        <Text text="{path:'ProductModel>Premark'}" />
+                        <!-- End: Remarkcol001 -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </ScrollContainer>
+</core:FragmentDefinition>
